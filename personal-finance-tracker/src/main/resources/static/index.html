@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Personal Expense Tracker</h1>
+    <p>Track and manage your expenses with ease.</p>
+
+    <div class="main-content">
+        <div class="add-expense-section card">
+            <h2>Add/Edit Expense</h2> <form id="expense-form"> <input type="hidden" id="expense-id"> <label for="description">Description</label>
+            <input type="text" id="description" placeholder="e.g., Groceries" required>
+
+            <label for="amount">Amount ($)</label>
+            <input type="number" id="amount" step="0.01" placeholder="e.g., 50.75" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <button type="submit" id="submit-button">Add Expense</button>
+            <button type="button" id="cancel-edit-button" style="display: none;">Cancel Edit</button> </form>
+        </div>
+
+        <div class="expenses-section card">
+            <h2>Expenses</h2>
+            <div class="filter-section">
+                <input type="date" id="filter-start-date">
+                <span>to</span>
+                <input type="date" id="filter-end-date">
+                <button id="filter-button">Filter</button>
+                <button id="clear-filter-button">Clear Filter</button>
+            </div>
+
+            <div class="total-for-period">
+                Total for selected period: <span id="total-amount">$0.00</span>
+            </div>
+
+            <div class="expenses-table-container">
+                <table class="expenses-table">
+                    <thead>
+                    <tr>
+                        <th>DESCRIPTION</th>
+                        <th>AMOUNT</th>
+                        <th>DATE</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                    </thead>
+                    <tbody id="expenses-list">
+                    <tr><td colspan="4">Loading expenses...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
